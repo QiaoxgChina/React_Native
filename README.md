@@ -1,6 +1,6 @@
 # React_Native
 study react_native projects
 
-01¡¢²¼¾ÖºÍÑùÊ½
-02¡¢FlatListºÍSectionList
-03¡¢react-navigation
+01ã€å¸ƒå±€å’Œæ ·å¼
+02ã€FlatListå’ŒSectionList
+03ã€react-navigation
