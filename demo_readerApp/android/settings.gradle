@@ -1,0 +1,3 @@
+rootProject.name = 'MyRnApp'
+
+include ':app'
