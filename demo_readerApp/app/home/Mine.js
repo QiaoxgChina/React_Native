@@ -6,17 +6,16 @@ import {
     Text,
     Image,
     ScrollView,
-    Alert
+    Alert,
+    Button
 } from 'react-native';
 import MineItem from "./MineItem";
 
 
-const TITLE = '我的';
+export default class Mine extends React.Component {
 
-export default class HomeHeader extends Component {
     constructor(props) {
         super(props);
-        this.state = {pageTitle: TITLE}
     }
 
     render() {
@@ -46,9 +45,28 @@ export default class HomeHeader extends Component {
                               onClick={this.itemOnClick}
                               tag={'aboutUs'}/>
                     <View style={{height: 0.2, backgroundColor: '#bfbfbf'}}></View>
+
+                    <Button
+                        onPress={() => this.props.nav.push({
+                            id: 'aboutUs',
+                            title: 'aboutUs',
+                        })}
+                        title="AboutUs"
+                    />
                 </ScrollView>
             </View>
         );
+    }
+
+    goToAboutUs() {
+        let navigator = this.props.nav;
+        Alert.alert('Button clicked  ' + navigator);
+        if (navigator) {
+            navigator.push({
+                id: 'aboutUs',
+                title: 'aboutUs',
+            });
+        }
     }
 
     itemOnClick(title, tag) {

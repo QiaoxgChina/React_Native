@@ -6,7 +6,8 @@ import {
     TextInput,
     View,
     StyleSheet,
-    Text
+    Text,
+    AppRegistry
 } from 'react-native';
 
 import Header from './Header.js';
@@ -14,6 +15,8 @@ import Home from './Home.js';
 import Mine from './Mine.js';
 import Message from './Message.js';
 import Collection from './Collection.js';
+
+import AboutUs from '../mine/AboutUs.js';
 
 const HOME = '首页';
 const HOME_NORMAL = require('../images/home.png');
@@ -67,10 +70,10 @@ export default class MainScreen extends Component {
                 <Header/>
                 <TabNavigator hidesTabTouch={true} tabBarStyle={styles.tab}>
                     {/*{this._renderTabItem(HOME_NORMAL, HOME_FOCUS, HOME, <HomePage nav={this.props.nav}/>)}*/}
-                    {this._renderTabItem(HOME_NORMAL, HOME_FOCUS, HOME, <Home/>)}
-                    {this._renderTabItem(FAXIAN_NORMAL, FAXIAN_FOCUS, FAXIAN, <Collection/>)}
-                    {this._renderTabItem(MESSAGE_NORMAL, MESSAGE_FOCUS, MESSAGE, <Message/>)}
-                    {this._renderTabItem(PERSONAL_NORMAL, PERSONAL_FOCUS, PERSONAL, <Mine/>)}
+                    {this._renderTabItem(HOME_NORMAL, HOME_FOCUS, HOME, <Home nav={this.props.nav}/>)}
+                    {this._renderTabItem(FAXIAN_NORMAL, FAXIAN_FOCUS, FAXIAN, <Collection nav={this.props.nav}/>)}
+                    {this._renderTabItem(MESSAGE_NORMAL, MESSAGE_FOCUS, MESSAGE, <Message nav={this.props.nav}/>)}
+                    {this._renderTabItem(PERSONAL_NORMAL, PERSONAL_FOCUS, PERSONAL, <Mine nav={this.props.nav}/>)}
                 </TabNavigator>
             </View>
         );
